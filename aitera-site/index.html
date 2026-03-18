@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO: Primary Meta ─────────────────────────────────── -->
+  <!-- Replace "yourdomain.com" with your production domain -->
+  <title>AITERA — Reinventing Systems with AI</title>
+  <meta name="description" content="AITERA helps organizations redesign operations, workflows, and decision systems using artificial intelligence. Enterprise-grade AI transformation." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yourdomain.com/" />
+
+  <!-- ── SEO: Open Graph ───────────────────────────────────── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://yourdomain.com/" />
+  <meta property="og:title"       content="AITERA — Reinventing Systems with AI" />
+  <meta property="og:description" content="Enterprise AI transformation. Redesign operations, workflows, and decision systems with AI." />
+  <meta property="og:image"       content="https://yourdomain.com/assets/img/og-image.png" />
+  <meta property="og:site_name"   content="AITERA" />
+
+  <!-- ── SEO: Twitter Card ─────────────────────────────────── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="AITERA — Reinventing Systems with AI" />
+  <meta name="twitter:description" content="Enterprise AI transformation. Redesign operations, workflows, and decision systems with AI." />
+  <meta name="twitter:image"       content="https://yourdomain.com/assets/img/og-image.png" />
+
+  <!-- ── SEO: hreflang (add more languages as needed) ─────── -->
+  <link rel="alternate" hreflang="en" href="https://yourdomain.com/" />
+  <link rel="alternate" hreflang="es" href="https://yourdomain.com/?lang=es" />
+  <link rel="alternate" hreflang="x-default" href="https://yourdomain.com/" />
+
+  <!-- ── SEO: Sitemap & Robots (add these files at root) ───── -->
+  <!-- <link rel="sitemap" type="application/xml" href="/sitemap.xml" /> -->
+  <!-- robots.txt should be placed at the root of the domain -->
+
+  <!-- ── Fonts ─────────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ── Styles ────────────────────────────────────────────── -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- ── JSON-LD Structured Data ───────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "AITERA",
+    "description": "AI transformation company helping organizations redesign business systems and operational processes using artificial intelligence.",
+    "url": "https://yourdomain.com",
+    "logo": "https://yourdomain.com/assets/img/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@yourdomain.com",
+      "contactType": "customer service"
+    },
+    "sameAs": []
+  }
+  </script>
+</head>
+<body>
+
+<!-- Skip to main content (accessibility) -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- ════════════════════════════════════════════════════════════
+     HEADER / NAVIGATION
+     ════════════════════════════════════════════════════════════ -->
+<header id="site-header" role="banner">
+  <div class="container">
+    <div class="header-inner">
+
+      <!-- Wordmark -->
+      <a href="index.html" class="wordmark" aria-label="AITERA — Home">
+        AI<span>TERA</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#services"    data-i18n="nav.services">Services</a>
+        <a href="#how-it-works" data-i18n="nav.how">How It Works</a>
+        <a href="#industries"  data-i18n="nav.industries">Industries</a>
+        <a href="#why-aitera"  data-i18n="nav.why">Why AITERA</a>
+        <a href="#about"       data-i18n="nav.about">About</a>
+        <a href="#contact"     data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <!-- Header right: lang switcher + CTA -->
+      <div class="header-right">
+        <!-- Language switcher
+             NOTE: Flag shown is based on selected language/locale,
+             NOT on geographic location detection. -->
+        <button class="lang-switcher" id="lang-toggle" aria-label="Switch language" aria-expanded="false">
+          <span class="lang-flag" id="lang-flag" aria-hidden="true">🇺🇸</span>
+          <span class="lang-code" id="lang-code">EN</span>
+        </button>
+
+        <a href="#contact" class="btn btn-primary" data-i18n="nav.cta">Book a Consultation</a>
+      </div>
+
+      <!-- Mobile menu toggle -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="#services"     data-i18n="nav.services">Services</a>
+    <a href="#how-it-works" data-i18n="nav.how">How It Works</a>
+    <a href="#industries"   data-i18n="nav.industries">Industries</a>
+    <a href="#why-aitera"   data-i18n="nav.why">Why AITERA</a>
+    <a href="#about"        data-i18n="nav.about">About</a>
+    <a href="#contact"      data-i18n="nav.contact">Contact</a>
+    <a href="#contact" class="btn btn-primary" data-i18n="nav.cta">Book a Consultation</a>
+  </nav>
+</header>
+
+<!-- ════════════════════════════════════════════════════════════
+     MAIN CONTENT
+     ════════════════════════════════════════════════════════════ -->
+<main id="main-content">
+
+  <!-- ── HERO ──────────────────────────────────────────────── -->
+  <section id="hero" aria-labelledby="hero-heading">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+            <span data-i18n="hero.eyebrow">AI Transformation</span>
+          </div>
+
+          <h1 id="hero-heading" class="hero-title">
+            <span data-i18n="hero.title.line1">Reinventing</span>
+            <br />
+            <span class="accent" data-i18n="hero.title.line2">systems with AI</span>
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+            AITERA helps organizations redesign operations, workflows, and decision systems using artificial intelligence — with precision, security, and enterprise-grade implementation.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary btn-lg btn-arrow" data-i18n="hero.cta.primary">Book a Consultation</a>
+            <a href="#services" class="btn btn-outline btn-lg" data-i18n="hero.cta.secondary">Explore Services</a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="hero-trust-item">
+              <svg class="hero-trust-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+              <span data-i18n="hero.trust.security">Security-conscious</span>
+            </div>
+            <div class="hero-trust-item">
+              <svg class="hero-trust-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+              <span data-i18n="hero.trust.enterprise">Enterprise-grade</span>
+            </div>
+            <div class="hero-trust-item">
+              <svg class="hero-trust-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+              <span data-i18n="hero.trust.practical">Practical implementation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Abstract hero visual — CSS/SVG network diagram -->
+        <div class="hero-visual" aria-hidden="true">
+          <svg viewBox="0 0 520 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Abstract network diagram representing AI system architecture">
+            <defs>
+              <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#6D1F3A" stop-opacity="0.18"/>
+                <stop offset="100%" stop-color="#6D1F3A" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#E8B7C8" stop-opacity="0.22"/>
+                <stop offset="100%" stop-color="#E8B7C8" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="blur1">
+                <feGaussianBlur stdDeviation="18"/>
+              </filter>
+            </defs>
+            <!-- Background glows -->
+            <ellipse cx="260" cy="240" rx="200" ry="180" fill="url(#glow1)" filter="url(#blur1)"/>
+            <ellipse cx="380" cy="140" rx="120" ry="100" fill="url(#glow2)" filter="url(#blur1)"/>
+            <!-- Connection lines -->
+            <line x1="260" y1="240" x2="140" y2="120" stroke="#E7D4DB" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="260" y1="240" x2="400" y2="130" stroke="#E7D4DB" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="260" y1="240" x2="420" y2="300" stroke="#E7D4DB" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="260" y1="240" x2="130" y2="340" stroke="#E7D4DB" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="260" y1="240" x2="260" y2="390" stroke="#E7D4DB" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <line x1="140" y1="120" x2="400" y2="130" stroke="#E7D4DB" stroke-width="1" opacity="0.5"/>
+            <line x1="400" y1="130" x2="420" y2="300" stroke="#E7D4DB" stroke-width="1" opacity="0.5"/>
+            <line x1="420" y1="300" x2="260" y2="390" stroke="#E7D4DB" stroke-width="1" opacity="0.5"/>
+            <line x1="260" y1="390" x2="130" y2="340" stroke="#E7D4DB" stroke-width="1" opacity="0.5"/>
+            <line x1="130" y1="340" x2="140" y2="120" stroke="#E7D4DB" stroke-width="1" opacity="0.5"/>
+            <!-- Secondary nodes -->
+            <line x1="140" y1="120" x2="80" y2="60" stroke="#E7D4DB" stroke-width="1" opacity="0.4"/>
+            <line x1="400" y1="130" x2="470" y2="70" stroke="#E7D4DB" stroke-width="1" opacity="0.4"/>
+            <line x1="420" y1="300" x2="490" y2="360" stroke="#E7D4DB" stroke-width="1" opacity="0.4"/>
+            <!-- Outer nodes (small) -->
+            <circle cx="80"  cy="60"  r="6" fill="#E8B7C8" opacity="0.7"/>
+            <circle cx="470" cy="70"  r="6" fill="#E8B7C8" opacity="0.7"/>
+            <circle cx="490" cy="360" r="6" fill="#E8B7C8" opacity="0.7"/>
+            <circle cx="60"  cy="280" r="5" fill="#E8B7C8" opacity="0.5"/>
+            <circle cx="200" cy="430" r="5" fill="#E8B7C8" opacity="0.5"/>
+            <!-- Mid nodes -->
+            <circle cx="140" cy="120" r="14" fill="white" stroke="#E7D4DB" stroke-width="2"/>
+            <circle cx="140" cy="120" r="7"  fill="#8A2D52" opacity="0.7"/>
+            <circle cx="400" cy="130" r="14" fill="white" stroke="#E7D4DB" stroke-width="2"/>
+            <circle cx="400" cy="130" r="7"  fill="#8A2D52" opacity="0.7"/>
+            <circle cx="420" cy="300" r="14" fill="white" stroke="#E7D4DB" stroke-width="2"/>
+            <circle cx="420" cy="300" r="7"  fill="#8A2D52" opacity="0.7"/>
+            <circle cx="130" cy="340" r="14" fill="white" stroke="#E7D4DB" stroke-width="2"/>
+            <circle cx="130" cy="340" r="7"  fill="#8A2D52" opacity="0.7"/>
+            <circle cx="260" cy="390" r="14" fill="white" stroke="#E7D4DB" stroke-width="2"/>
+            <circle cx="260" cy="390" r="7"  fill="#8A2D52" opacity="0.7"/>
+            <!-- Central node -->
+            <circle cx="260" cy="240" r="44" fill="white" stroke="#E7D4DB" stroke-width="2" filter="url(#blur1)" opacity="0.6"/>
+            <circle cx="260" cy="240" r="36" fill="white" stroke="#6D1F3A" stroke-width="2"/>
+            <circle cx="260" cy="240" r="22" fill="#6D1F3A"/>
+            <!-- Center icon: simplified AI symbol -->
+            <path d="M252 240 L260 228 L268 240 L260 252 Z" fill="white" opacity="0.9"/>
+            <circle cx="260" cy="240" r="5" fill="white"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VALUE PROPOSITION ──────────────────────────────────── -->
+  <section id="value-prop" class="section section-dark" aria-labelledby="value-heading">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="section-label" style="background:rgba(232,183,200,0.12);border-color:rgba(232,183,200,0.2);color:var(--pink-accent);" data-i18n="value.label">The Transformation Imperative</div>
+        <h2 id="value-heading" data-i18n="value.title">AI is not a feature. It's a redesign.</h2>
+        <p data-i18n="value.subtitle">Organizations that treat AI as a bolt-on tool miss the real opportunity. AITERA helps you rethink systems from the ground up — so AI becomes structural, not cosmetic.</p>
+      </div>
+
+      <div class="value-grid reveal">
+        <div class="value-item">
+          <div class="value-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h4 data-i18n="value.item1.title">System-level redesign</h4>
+          <p data-i18n="value.item1.desc">We don't automate isolated tasks. We redesign the operational architecture so AI creates compounding value across your organization.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h4 data-i18n="value.item2.title">Intelligence by design</h4>
+          <p data-i18n="value.item2.desc">Every solution is built with AI as a first-class component — not retrofitted. This means faster decisions, fewer bottlenecks, and measurable operational gains.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h4 data-i18n="value.item3.title">Scalable from day one</h4>
+          <p data-i18n="value.item3.desc">Our implementations are architected to scale. What starts as a focused deployment grows into a strategic capability that evolves with your organization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ───────────────────────────────────────────── -->
+  <section id="services" class="section section-alt" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="section-label" data-i18n="services.label">What We Build</div>
+        <h2 id="services-heading" data-i18n="services.title">AI solutions built for enterprise operations</h2>
+        <p data-i18n="services.subtitle">Each service is designed to address a specific operational challenge — and to integrate into a broader AI transformation strategy.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Service 1 -->
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3 data-i18n="services.s1.title">AI Knowledge Assistants</h3>
+          <p data-i18n="services.s1.desc">Intelligent assistants that surface the right information at the right moment — trained on your organization's knowledge base, policies, and processes.</p>
+          <span class="service-benefit" data-i18n="services.s1.benefit">↑ Decision speed</span>
+        </article>
+
+        <!-- Service 2 -->
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3 data-i18n="services.s2.title">Document Intelligence</h3>
+          <p data-i18n="services.s2.desc">Transform unstructured documents — contracts, reports, forms — into structured, queryable intelligence. Reduce manual review time and extract insights at scale.</p>
+          <span class="service-benefit" data-i18n="services.s2.benefit">↓ Manual processing</span>
+        </article>
+
+        <!-- Service 3 -->
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h3 data-i18n="services.s3.title">Customer Support AI Agents</h3>
+          <p data-i18n="services.s3.desc">Autonomous agents that handle complex customer interactions with accuracy and consistency — escalating intelligently when human judgment is required.</p>
+          <span class="service-benefit" data-i18n="services.s3.benefit">↑ Resolution quality</span>
+        </article>
+
+        <!-- Service 4 -->
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 data-i18n="services.s4.title">Operations Copilot</h3>
+          <p data-i18n="services.s4.desc">An AI layer embedded in your operational workflows — providing real-time guidance, anomaly detection, and decision support for your operations teams.</p>
+          <span class="service-benefit" data-i18n="services.s4.benefit">↑ Operational clarity</span>
+        </article>
+
+        <!-- Service 5 -->
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 data-i18n="services.s5.title">Workflow Automation Agents</h3>
+          <p data-i18n="services.s5.desc">End-to-end automation of complex, multi-step business processes. Agents that coordinate across systems, handle exceptions, and adapt to changing conditions.</p>
+          <span class="service-benefit" data-i18n="services.s5.benefit">↓ Process friction</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ───────────────────────────────────────── -->
+  <section id="how-it-works" class="section" aria-labelledby="how-heading">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="section-label" data-i18n="how.label">Our Approach</div>
+        <h2 id="how-heading" data-i18n="how.title">From discovery to scale</h2>
+        <p data-i18n="how.subtitle">A structured methodology that moves from understanding your systems to deploying AI that performs in production.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-number" aria-label="Step 1">01</div>
+          <h3 data-i18n="how.step1.title">Discover</h3>
+          <p data-i18n="how.step1.desc">We map your current systems, data flows, and operational bottlenecks to identify where AI creates the highest strategic value.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number" aria-label="Step 2">02</div>
+          <h3 data-i18n="how.step2.title">Design</h3>
+          <p data-i18n="how.step2.desc">We architect the AI solution — defining models, data pipelines, integration points, and governance frameworks before a single line of code is written.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number" aria-label="Step 3">03</div>
+          <h3 data-i18n="how.step3.title">Implement</h3>
+          <p data-i18n="how.step3.desc">We build and deploy with enterprise-grade standards: security, observability, testing, and documentation built in from the start.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-number" aria-label="Step 4">04</div>
+          <h3 data-i18n="how.step4.title">Scale</h3>
+          <p data-i18n="how.step4.desc">We support expansion across teams, systems, and use cases — ensuring your AI capability grows with your organization's ambitions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INDUSTRIES ─────────────────────────────────────────── -->
+  <section id="industries" class="section section-alt" aria-labelledby="industries-heading">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="section-label" data-i18n="industries.label">Cross-Industry Adaptability</div>
+        <h2 id="industries-heading" data-i18n="industries.title">Built for any sector</h2>
+        <p data-i18n="industries.subtitle">AITERA's methodology adapts to the specific constraints, regulations, and operational realities of each industry.</p>
+      </div>
+
+      <div class="industries-grid">
+        <div class="industry-card reveal">
+          <div class="industry-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          </div>
+          <div>
+            <h4 data-i18n="industries.i1.title">Finance</h4>
+            <p data-i18n="industries.i1.desc">Risk analysis, compliance automation, and intelligent reporting.</p>
+          </div>
+        </div>
+        <div class="industry-card reveal">
+          <div class="industry-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <div>
+            <h4 data-i18n="industries.i2.title">Healthcare</h4>
+            <p data-i18n="industries.i2.desc">Clinical documentation, patient flow optimization, and knowledge management.</p>
+          </div>
+        </div>
+        <div class="industry-card reveal">
+          <div class="industry-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div>
+            <h4 data-i18n="industries.i3.title">Manufacturing</h4>
+            <p data-i18n="industries.i3.desc">Predictive maintenance, quality control, and supply chain intelligence.</p>
+          </div>
+        </div>
+        <div class="industry-card reveal">
+          <div class="industry-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div>
+            <h4 data-i18n="industries.i4.title">Logistics</h4>
+            <p data-i18n="industries.i4.desc">Route optimization, demand forecasting, and operational coordination.</p>
+          </div>
+        </div>
+        <div class="industry-card reveal">
+          <div class="industry-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div>
+            <h4 data-i18n="industries.i5.title">Legal</h4>
+            <p data-i18n="industries.i5.desc">Contract analysis, due diligence automation, and legal research acceleration.</p>
+          </div>
+        </div>
+        <div class="industry-card reveal">
+          <div class="industry-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div>
+            <h4 data-i18n="industries.i6.title">Professional Services</h4>
+            <p data-i18n="industries.i6.desc">Proposal generation, client intelligence, and delivery optimization.</p>
+          </div>
+        </div>
+        <div class="industry-card reveal">
+          <div class="industry-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <h4 data-i18n="industries.i7.title">Enterprise Operations</h4>
+            <p data-i18n="industries.i7.desc">Cross-functional AI deployment for large-scale organizational transformation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY AITERA ─────────────────────────────────────────── -->
+  <section id="why-aitera" class="section" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="why-inner">
+        <!-- Visual side -->
+        <div class="why-visual" aria-hidden="true">
+          <svg viewBox="0 0 460 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="wglow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#6D1F3A" stop-opacity="0.08"/>
+                <stop offset="100%" stop-color="#6D1F3A" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="230" cy="230" r="200" fill="url(#wglow)"/>
+            <!-- Concentric rings -->
+            <circle cx="230" cy="230" r="180" stroke="#E7D4DB" stroke-width="1" stroke-dasharray="6 6" opacity="0.6"/>
+            <circle cx="230" cy="230" r="130" stroke="#E7D4DB" stroke-width="1" stroke-dasharray="4 8" opacity="0.5"/>
+            <circle cx="230" cy="230" r="80"  stroke="#E7D4DB" stroke-width="1.5" opacity="0.4"/>
+            <!-- Radial lines -->
+            <line x1="230" y1="50"  x2="230" y2="100" stroke="#6D1F3A" stroke-width="1.5" opacity="0.3"/>
+            <line x1="230" y1="360" x2="230" y2="410" stroke="#6D1F3A" stroke-width="1.5" opacity="0.3"/>
+            <line x1="50"  y1="230" x2="100" y2="230" stroke="#6D1F3A" stroke-width="1.5" opacity="0.3"/>
+            <line x1="360" y1="230" x2="410" y2="230" stroke="#6D1F3A" stroke-width="1.5" opacity="0.3"/>
+            <!-- Diagonal lines -->
+            <line x1="103" y1="103" x2="140" y2="140" stroke="#6D1F3A" stroke-width="1" opacity="0.25"/>
+            <line x1="357" y1="103" x2="320" y2="140" stroke="#6D1F3A" stroke-width="1" opacity="0.25"/>
+            <line x1="103" y1="357" x2="140" y2="320" stroke="#6D1F3A" stroke-width="1" opacity="0.25"/>
+            <line x1="357" y1="357" x2="320" y2="320" stroke="#6D1F3A" stroke-width="1" opacity="0.25"/>
+            <!-- Outer dots -->
+            <circle cx="230" cy="50"  r="7" fill="#6D1F3A" opacity="0.5"/>
+            <circle cx="230" cy="410" r="7" fill="#6D1F3A" opacity="0.5"/>
+            <circle cx="50"  cy="230" r="7" fill="#6D1F3A" opacity="0.5"/>
+            <circle cx="410" cy="230" r="7" fill="#6D1F3A" opacity="0.5"/>
+            <circle cx="103" cy="103" r="5" fill="#E8B7C8" opacity="0.7"/>
+            <circle cx="357" cy="103" r="5" fill="#E8B7C8" opacity="0.7"/>
+            <circle cx="103" cy="357" r="5" fill="#E8B7C8" opacity="0.7"/>
+            <circle cx="357" cy="357" r="5" fill="#E8B7C8" opacity="0.7"/>
+            <!-- Center -->
+            <circle cx="230" cy="230" r="52" fill="white" stroke="#E7D4DB" stroke-width="2"/>
+            <circle cx="230" cy="230" r="38" fill="#6D1F3A"/>
+            <path d="M222 230 L230 218 L238 230 L230 242 Z" fill="white" opacity="0.9"/>
+            <circle cx="230" cy="230" r="6" fill="white"/>
+          </svg>
+        </div>
+
+        <!-- Content side -->
+        <div>
+          <div class="section-label" data-i18n="why.label">Why AITERA</div>
+          <h2 id="why-heading" data-i18n="why.title">Built differently. Deployed seriously.</h2>
+          <p style="margin-bottom:0" data-i18n="why.subtitle">We combine strategic thinking with technical depth — so AI transformation delivers real operational change, not just a proof of concept.</p>
+
+          <div class="differentiators">
+            <div class="diff-item reveal">
+              <div class="diff-check" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 7 6 11 12 3"/></svg>
+              </div>
+              <div>
+                <h4 data-i18n="why.d1.title">AI-first system redesign</h4>
+                <p data-i18n="why.d1.desc">We redesign processes with AI as a structural component, not an afterthought.</p>
+              </div>
+            </div>
+            <div class="diff-item reveal">
+              <div class="diff-check" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 7 6 11 12 3"/></svg>
+              </div>
+              <div>
+                <h4 data-i18n="why.d2.title">Enterprise-grade mindset</h4>
+                <p data-i18n="why.d2.desc">Security, governance, and scalability are built in from the first design decision.</p>
+              </div>
+            </div>
+            <div class="diff-item reveal">
+              <div class="diff-check" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 7 6 11 12 3"/></svg>
+              </div>
+              <div>
+                <h4 data-i18n="why.d3.title">Practical implementation</h4>
+                <p data-i18n="why.d3.desc">We deliver working systems, not slide decks. Every engagement ends with production-ready AI.</p>
+              </div>
+            </div>
+            <div class="diff-item reveal">
+              <div class="diff-check" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 7 6 11 12 3"/></svg>
+              </div>
+              <div>
+                <h4 data-i18n="why.d4.title">Cross-industry adaptability</h4>
+                <p data-i18n="why.d4.desc">Our methodology adapts to the specific constraints and opportunities of your sector.</p>
+              </div>
+            </div>
+            <div class="diff-item reveal">
+              <div class="diff-check" aria-hidden="true">
+                <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="2 7 6 11 12 3"/></svg>
+              </div>
+              <div>
+                <h4 data-i18n="why.d5.title">Privacy and security by design</h4>
+                <p data-i18n="why.d5.desc">Every system is built with data minimization, access control, and secure architecture principles.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECURITY & PRIVACY ─────────────────────────────────── -->
+  <section id="security" class="section section-dark" aria-labelledby="security-heading">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="section-label" style="background:rgba(232,183,200,0.12);border-color:rgba(232,183,200,0.2);color:var(--pink-accent);" data-i18n="security.label">Security &amp; Privacy</div>
+        <h2 id="security-heading" data-i18n="security.title">Built with privacy and security in mind</h2>
+        <p data-i18n="security.subtitle">Every AITERA implementation is structured around GDPR-ready principles, secure architecture, and data minimization — from the first design decision to production deployment.</p>
+      </div>
+
+      <div class="security-grid">
+        <div class="security-card reveal">
+          <div class="security-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4 data-i18n="security.c1.title">GDPR-ready principles</h4>
+          <p data-i18n="security.c1.desc">Designed to support compliance requirements. Data handling, retention, and access are structured with regulatory frameworks in mind.</p>
+        </div>
+        <div class="security-card reveal">
+          <div class="security-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <h4 data-i18n="security.c2.title">Data minimization</h4>
+          <p data-i18n="security.c2.desc">We collect and process only what is strictly necessary. No unnecessary data retention, no speculative data collection.</p>
+        </div>
+        <div class="security-card reveal">
+          <div class="security-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h4 data-i18n="security.c3.title">Encryption in transit</h4>
+          <p data-i18n="security.c3.desc">All data in motion is encrypted using current industry standards. Secure communication is a baseline requirement, not an option.</p>
+        </div>
+        <div class="security-card reveal">
+          <div class="security-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+          </div>
+          <h4 data-i18n="security.c4.title">Least privilege access</h4>
+          <p data-i18n="security.c4.desc">Systems are designed so each component accesses only what it needs. Privilege escalation paths are minimized by design.</p>
+        </div>
+        <div class="security-card reveal">
+          <div class="security-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h4 data-i18n="security.c5.title">Privacy by design</h4>
+          <p data-i18n="security.c5.desc">Privacy considerations are embedded in the architecture from the start — not added as a compliance layer after the fact.</p>
+        </div>
+        <div class="security-card reveal">
+          <div class="security-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h4 data-i18n="security.c6.title">Secure implementation approach</h4>
+          <p data-i18n="security.c6.desc">Code is written with security-conscious practices: input validation, dependency management, and secure defaults throughout.</p>
+        </div>
+      </div>
+
+      <p class="security-disclaimer" data-i18n="security.disclaimer">
+        AITERA implementations are designed with GDPR-ready principles and security-conscious practices. This does not constitute a legal compliance certification. Organizations should conduct their own legal and compliance review.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ───────────────────────────────────────────────── -->
+  <section id="about" class="section section-alt" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-inner">
+        <div>
+          <div class="section-label" data-i18n="about.label">About AITERA</div>
+          <h2 id="about-heading" data-i18n="about.title">Reinventing systems with AI</h2>
+          <p data-i18n="about.p1">AITERA helps organizations reinvent systems with AI by combining strategic redesign, intelligent automation, and enterprise-grade implementation.</p>
+          <p style="margin-top:1rem" data-i18n="about.p2">We work with organizations that are serious about transformation — not just experimentation. Our engagements are structured to deliver measurable operational change, with the rigor and security standards that enterprise environments demand.</p>
+          <p style="margin-top:1rem" data-i18n="about.p3">We are AI-first, implementation-focused, and built for the long term.</p>
+          <div style="margin-top:2rem">
+            <a href="#contact" class="btn btn-primary btn-arrow" data-i18n="about.cta">Start a conversation</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="about-stats">
+            <div class="stat-card reveal">
+              <div class="stat-number" data-i18n="about.stat1.num">AI-first</div>
+              <div class="stat-label" data-i18n="about.stat1.label">Approach to every engagement</div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-number" data-i18n="about.stat2.num">7+</div>
+              <div class="stat-label" data-i18n="about.stat2.label">Industries served</div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-number" data-i18n="about.stat3.num">5</div>
+              <div class="stat-label" data-i18n="about.stat3.label">Core AI solution types</div>
+            </div>
+            <div class="stat-card reveal">
+              <div class="stat-number" data-i18n="about.stat4.num">100%</div>
+              <div class="stat-label" data-i18n="about.stat4.label">Production-ready delivery</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ────────────────────────────────────────────── -->
+  <section id="contact" class="section" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-info">
+          <div class="section-label" data-i18n="contact.label">Get in Touch</div>
+          <h2 id="contact-heading" data-i18n="contact.title">Ready to redesign your systems?</h2>
+          <p data-i18n="contact.subtitle">Tell us about your organization and the challenges you're facing. We'll respond within one business day.</p>
+
+          <div class="contact-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <!-- Replace with your actual contact email -->
+            <span>hello@yourdomain.com</span>
+          </div>
+        </div>
+
+        <div class="contact-form" role="form" aria-label="Contact form">
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name" data-i18n="contact.form.name">Full name</label>
+                <input type="text" id="contact-name" name="name" autocomplete="name" required placeholder="[Your name]" />
+              </div>
+              <div class="form-group">
+                <label for="contact-company" data-i18n="contact.form.company">Company</label>
+                <input type="text" id="contact-company" name="company" autocomplete="organization" placeholder="[Company name]" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" data-i18n="contact.form.email">Work email</label>
+              <input type="email" id="contact-email" name="email" autocomplete="email" required placeholder="[your@company.com]" />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" data-i18n="contact.form.message">How can we help?</label>
+              <textarea id="contact-message" name="message" required placeholder="[Describe your challenge or project]"></textarea>
+            </div>
+
+            <!-- CAPTCHA placeholder — integrate reCAPTCHA or hCaptcha before going live -->
+            <div class="captcha-placeholder" data-i18n="contact.form.captcha">
+              [ CAPTCHA — integrate reCAPTCHA or hCaptcha here before deployment ]
+            </div>
+
+            <!-- Explicit consent — no pre-ticked checkbox -->
+            <div class="form-consent">
+              <input type="checkbox" id="contact-consent" name="consent" required />
+              <label for="contact-consent">
+                <span data-i18n="contact.form.consent.text">I agree that AITERA may process my data to respond to this inquiry. I have read the </span><a href="privacy-policy.html" data-i18n="contact.form.consent.privacy">Privacy Policy</a>.
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-arrow" style="width:100%;justify-content:center;" data-i18n="contact.form.submit">Send message</button>
+
+            <p class="form-privacy-note" data-i18n="contact.form.privacyNote">
+              Your data is used solely to respond to your inquiry. We do not sell or share your information with third parties. See our <a href="privacy-policy.html">Privacy Policy</a> for details.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BANNER ─────────────────────────────────────────── -->
+  <section id="cta-banner" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-banner-inner">
+        <div class="section-label" style="background:rgba(232,183,200,0.15);border-color:rgba(232,183,200,0.25);color:var(--pink-accent);margin:0 auto 1.25rem;" data-i18n="cta.label">Take the next step</div>
+        <h2 id="cta-heading" data-i18n="cta.title">Your systems are ready for AI. Are you?</h2>
+        <p data-i18n="cta.subtitle">Book a consultation with AITERA and discover where AI transformation creates the most strategic value for your organization.</p>
+        <div class="cta-actions">
+          <a href="#contact" class="btn btn-ghost btn-lg btn-arrow" data-i18n="cta.primary">Book a Consultation</a>
+          <a href="#services" class="btn btn-lg" style="background:rgba(255,255,255,0.12);color:white;border:2px solid rgba(255,255,255,0.25);" data-i18n="cta.secondary">Explore Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ════════════════════════════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════════════════════════════ -->
+<footer id="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="wordmark">AI<span>TERA</span></a>
+        <p data-i18n="footer.tagline">Reinventing systems with AI. Enterprise-grade AI transformation for organizations that are serious about change.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5 data-i18n="footer.col1.title">Solutions</h5>
+        <ul>
+          <li><a href="#services" data-i18n="services.s1.title">AI Knowledge Assistants</a></li>
+          <li><a href="#services" data-i18n="services.s2.title">Document Intelligence</a></li>
+          <li><a href="#services" data-i18n="services.s3.title">Customer Support AI</a></li>
+          <li><a href="#services" data-i18n="services.s4.title">Operations Copilot</a></li>
+          <li><a href="#services" data-i18n="services.s5.title">Workflow Automation</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 data-i18n="footer.col2.title">Company</h5>
+        <ul>
+          <li><a href="#about"       data-i18n="nav.about">About</a></li>
+          <li><a href="#how-it-works" data-i18n="nav.how">How It Works</a></li>
+          <li><a href="#industries"  data-i18n="nav.industries">Industries</a></li>
+          <li><a href="#why-aitera"  data-i18n="nav.why">Why AITERA</a></li>
+          <li><a href="#contact"     data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5 data-i18n="footer.col3.title">Legal</h5>
+        <ul>
+          <li><a href="privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
+          <li><a href="cookie-policy.html"  data-i18n="footer.cookies">Cookie Policy</a></li>
+          <li><a href="terms.html"          data-i18n="footer.terms">Terms of Use</a></li>
+        </ul>
+        <div style="margin-top:1.5rem">
+          <h5 data-i18n="footer.col4.title">Contact</h5>
+          <!-- Replace with your actual contact email -->
+          <a href="mailto:hello@yourdomain.com" style="font-size:0.88rem;color:rgba(255,255,255,0.55);">hello@yourdomain.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        <span data-i18n="footer.copyright">© 2025 AITERA. All rights reserved.</span>
+      </p>
+      <div class="footer-legal">
+        <a href="privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="cookie-policy.html"  data-i18n="footer.cookies">Cookie Policy</a>
+        <a href="terms.html"          data-i18n="footer.terms">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════════
+     COOKIE CONSENT BANNER
+     No pre-ticked options. No dark patterns.
+     ════════════════════════════════════════════════════════════ -->
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <p class="cookie-text">
+    <span data-i18n="cookie.text">We use essential cookies to make this site work. We do not use tracking or advertising cookies. See our </span><a href="cookie-policy.html" data-i18n="cookie.link">Cookie Policy</a><span data-i18n="cookie.text2"> for details.</span>
+  </p>
+  <div class="cookie-actions">
+    <button class="btn-cookie-accept" id="cookie-accept" data-i18n="cookie.accept">Accept</button>
+    <button class="btn-cookie-decline" id="cookie-decline" data-i18n="cookie.decline">Decline</button>
+  </div>
+</div>
+
+<!-- ── Scripts ────────────────────────────────────────────── -->
+<script src="script.js"></script>
+</body>
+</html>
