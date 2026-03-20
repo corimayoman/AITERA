@@ -1,5 +1,5 @@
 /**
- * AITERA — Main Script
+ * avely.ai — Main Script
  * Handles: language switching, locale detection, flag update,
  *          mobile menu, cookie banner, scroll effects, scroll reveal.
  *
@@ -15,7 +15,7 @@ const translations = {
     "nav.services":    "Services",
     "nav.how":         "How It Works",
     "nav.industries":  "Industries",
-    "nav.why":         "Why AITERA",
+    "nav.why":         "Why avely.ai",
     "nav.about":       "About",
     "nav.contact":     "Contact",
     "nav.cta":         "Book a Consultation",
@@ -24,7 +24,7 @@ const translations = {
     "hero.eyebrow":         "AI Transformation",
     "hero.title.line1":     "Reinventing",
     "hero.title.line2":     "systems with AI",
-    "hero.subtitle":        "AITERA helps organizations redesign operations, workflows, and decision systems using artificial intelligence — with precision, security, and enterprise-grade implementation.",
+    "hero.subtitle":        "avely.ai helps organizations redesign operations, workflows, and decision systems using artificial intelligence — with precision, security, and enterprise-grade implementation.",
     "hero.cta.primary":     "Book a Consultation",
     "hero.cta.secondary":   "Explore Services",
     "hero.trust.security":  "Security-conscious",
@@ -34,7 +34,7 @@ const translations = {
     /* Value Proposition */
     "value.label":       "The Transformation Imperative",
     "value.title":       "AI is not a feature. It's a redesign.",
-    "value.subtitle":    "Organizations that treat AI as a bolt-on tool miss the real opportunity. AITERA helps you rethink systems from the ground up — so AI becomes structural, not cosmetic.",
+    "value.subtitle":    "Organizations that treat AI as a bolt-on tool miss the real opportunity. avely.ai helps you rethink systems from the ground up — so AI becomes structural, not cosmetic.",
     "value.item1.title": "System-level redesign",
     "value.item1.desc":  "We don't automate isolated tasks. We redesign the operational architecture so AI creates compounding value across your organization.",
     "value.item2.title": "Intelligence by design",
@@ -78,7 +78,7 @@ const translations = {
     /* Industries */
     "industries.label":   "Cross-Industry Adaptability",
     "industries.title":   "Built for any sector",
-    "industries.subtitle":"AITERA's methodology adapts to the specific constraints, regulations, and operational realities of each industry.",
+    "industries.subtitle":"avely.ai's methodology adapts to the specific constraints, regulations, and operational realities of each industry.",
     "industries.i1.title":"Finance",
     "industries.i1.desc": "Risk analysis, compliance automation, and intelligent reporting.",
     "industries.i2.title":"Healthcare",
@@ -94,8 +94,8 @@ const translations = {
     "industries.i7.title":"Enterprise Operations",
     "industries.i7.desc": "Cross-functional AI deployment for large-scale organizational transformation.",
 
-    /* Why AITERA */
-    "why.label":    "Why AITERA",
+    /* Why avely.ai */
+    "why.label":    "Why avely.ai",
     "why.title":    "Built differently. Deployed seriously.",
     "why.subtitle": "We combine strategic thinking with technical depth — so AI transformation delivers real operational change, not just a proof of concept.",
     "why.d1.title": "AI-first system redesign",
@@ -112,7 +112,7 @@ const translations = {
     /* Security */
     "security.label":       "Security & Privacy",
     "security.title":       "Built with privacy and security in mind",
-    "security.subtitle":    "Every AITERA implementation is structured around GDPR-ready principles, secure architecture, and data minimization — from the first design decision to production deployment.",
+    "security.subtitle":    "Every avely.ai implementation is structured around GDPR-ready principles, secure architecture, and data minimization — from the first design decision to production deployment.",
     "security.c1.title":    "GDPR-ready principles",
     "security.c1.desc":     "Designed to support compliance requirements. Data handling, retention, and access are structured with regulatory frameworks in mind.",
     "security.c2.title":    "Data minimization",
@@ -125,12 +125,12 @@ const translations = {
     "security.c5.desc":     "Privacy considerations are embedded in the architecture from the start — not added as a compliance layer after the fact.",
     "security.c6.title":    "Secure implementation approach",
     "security.c6.desc":     "Code is written with security-conscious practices: input validation, dependency management, and secure defaults throughout.",
-    "security.disclaimer":  "AITERA implementations are designed with GDPR-ready principles and security-conscious practices. This does not constitute a legal compliance certification. Organizations should conduct their own legal and compliance review.",
+    "security.disclaimer":  "avely.ai implementations are designed with GDPR-ready principles and security-conscious practices. This does not constitute a legal compliance certification. Organizations should conduct their own legal and compliance review.",
 
     /* About */
-    "about.label":       "About AITERA",
+    "about.label":       "About avely.ai",
     "about.title":       "Reinventing systems with AI",
-    "about.p1":          "AITERA helps organizations reinvent systems with AI by combining strategic redesign, intelligent automation, and enterprise-grade implementation.",
+    "about.p1":          "avely.ai helps organizations reinvent systems with AI by combining strategic redesign, intelligent automation, and enterprise-grade implementation.",
     "about.p2":          "We work with organizations that are serious about transformation — not just experimentation. Our engagements are structured to deliver measurable operational change, with the rigor and security standards that enterprise environments demand.",
     "about.p3":          "We are AI-first, implementation-focused, and built for the long term.",
     "about.cta":         "Start a conversation",
@@ -152,7 +152,7 @@ const translations = {
     "contact.form.email":      "Work email",
     "contact.form.message":    "How can we help?",
     "contact.form.captcha":    "[ CAPTCHA — integrate reCAPTCHA or hCaptcha here before deployment ]",
-    "contact.form.consent.text":   "I agree that AITERA may process my data to respond to this inquiry. I have read the ",
+    "contact.form.consent.text":   "I agree that avely.ai may process my data to respond to this inquiry. I have read the ",
     "contact.form.consent.privacy":"Privacy Policy",
     "contact.form.submit":     "Send message",
     "contact.form.privacyNote":"Your data is used solely to respond to your inquiry. We do not sell or share your information with third parties. See our Privacy Policy for details.",
@@ -160,7 +160,7 @@ const translations = {
     /* CTA Banner */
     "cta.label":    "Take the next step",
     "cta.title":    "Your systems are ready for AI. Are you?",
-    "cta.subtitle": "Book a consultation with AITERA and discover where AI transformation creates the most strategic value for your organization.",
+    "cta.subtitle": "Book a consultation with avely.ai and discover where AI transformation creates the most strategic value for your organization.",
     "cta.primary":  "Book a Consultation",
     "cta.secondary":"Explore Services",
 
@@ -173,7 +173,7 @@ const translations = {
     "footer.privacy":    "Privacy Policy",
     "footer.cookies":    "Cookie Policy",
     "footer.terms":      "Terms of Use",
-    "footer.copyright":  "© 2025 AITERA. All rights reserved.",
+    "footer.copyright":  "© 2025 avely.ai. All rights reserved.",
 
     /* Cookie Banner */
     "cookie.text":    "We use essential cookies to make this site work. We do not use tracking or advertising cookies. See our ",
@@ -190,8 +190,8 @@ const translations = {
     "terms.page.title":     "Terms of Use",
 
     /* Page meta (updated dynamically) */
-    "_meta.title":       "AITERA — Reinventing Systems with AI",
-    "_meta.description": "AITERA helps organizations redesign operations, workflows, and decision systems using artificial intelligence. Enterprise-grade AI transformation.",
+    "_meta.title":       "avely.ai — AI-Powered Digital Transformation",
+    "_meta.description": "avely.ai helps organizations redesign operations, workflows, and decision systems using artificial intelligence. Enterprise-grade AI transformation.",
   },
 
   es: {
@@ -199,7 +199,7 @@ const translations = {
     "nav.services":    "Servicios",
     "nav.how":         "Cómo Funciona",
     "nav.industries":  "Sectores",
-    "nav.why":         "Por Qué AITERA",
+    "nav.why":         "Por Qué avely.ai",
     "nav.about":       "Nosotros",
     "nav.contact":     "Contacto",
     "nav.cta":         "Reservar Consulta",
@@ -208,7 +208,7 @@ const translations = {
     "hero.eyebrow":         "Transformación con IA",
     "hero.title.line1":     "Reinventando",
     "hero.title.line2":     "sistemas con IA",
-    "hero.subtitle":        "AITERA ayuda a las organizaciones a rediseñar operaciones, flujos de trabajo y sistemas de decisión mediante inteligencia artificial — con precisión, seguridad e implementación de nivel empresarial.",
+    "hero.subtitle":        "avely.ai ayuda a las organizaciones a rediseñar operaciones, flujos de trabajo y sistemas de decisión mediante inteligencia artificial — con precisión, seguridad e implementación de nivel empresarial.",
     "hero.cta.primary":     "Reservar Consulta",
     "hero.cta.secondary":   "Ver Servicios",
     "hero.trust.security":  "Seguridad por diseño",
@@ -218,7 +218,7 @@ const translations = {
     /* Value Proposition */
     "value.label":       "El Imperativo de la Transformación",
     "value.title":       "La IA no es una función. Es un rediseño.",
-    "value.subtitle":    "Las organizaciones que tratan la IA como un complemento pierden la oportunidad real. AITERA te ayuda a repensar los sistemas desde cero — para que la IA sea estructural, no cosmética.",
+    "value.subtitle":    "Las organizaciones que tratan la IA como un complemento pierden la oportunidad real. avely.ai te ayuda a repensar los sistemas desde cero — para que la IA sea estructural, no cosmética.",
     "value.item1.title": "Rediseño a nivel de sistema",
     "value.item1.desc":  "No automatizamos tareas aisladas. Rediseñamos la arquitectura operativa para que la IA genere valor compuesto en toda la organización.",
     "value.item2.title": "Inteligencia por diseño",
@@ -262,7 +262,7 @@ const translations = {
     /* Industries */
     "industries.label":   "Adaptabilidad Multisectorial",
     "industries.title":   "Diseñado para cualquier sector",
-    "industries.subtitle":"La metodología de AITERA se adapta a las restricciones, regulaciones y realidades operativas específicas de cada industria.",
+    "industries.subtitle":"La metodología de avely.ai se adapta a las restricciones, regulaciones y realidades operativas específicas de cada industria.",
     "industries.i1.title":"Finanzas",
     "industries.i1.desc": "Análisis de riesgo, automatización del cumplimiento e informes inteligentes.",
     "industries.i2.title":"Salud",
@@ -278,8 +278,8 @@ const translations = {
     "industries.i7.title":"Operaciones Empresariales",
     "industries.i7.desc": "Despliegue de IA multifuncional para transformación organizacional a gran escala.",
 
-    /* Why AITERA */
-    "why.label":    "Por Qué AITERA",
+    /* Why avely.ai */
+    "why.label":    "Por Qué avely.ai",
     "why.title":    "Construido diferente. Desplegado en serio.",
     "why.subtitle": "Combinamos pensamiento estratégico con profundidad técnica — para que la transformación con IA genere cambio operativo real, no solo una prueba de concepto.",
     "why.d1.title": "Rediseño de sistemas con IA como base",
@@ -296,7 +296,7 @@ const translations = {
     /* Security */
     "security.label":       "Seguridad y Privacidad",
     "security.title":       "Construido con privacidad y seguridad en mente",
-    "security.subtitle":    "Cada implementación de AITERA se estructura en torno a principios preparados para el RGPD, arquitectura segura y minimización de datos — desde la primera decisión de diseño hasta el despliegue en producción.",
+    "security.subtitle":    "Cada implementación de avely.ai se estructura en torno a principios preparados para el RGPD, arquitectura segura y minimización de datos — desde la primera decisión de diseño hasta el despliegue en producción.",
     "security.c1.title":    "Principios preparados para el RGPD",
     "security.c1.desc":     "Diseñado para apoyar los requisitos de cumplimiento. El manejo, retención y acceso a datos se estructuran teniendo en cuenta los marcos regulatorios.",
     "security.c2.title":    "Minimización de datos",
@@ -309,12 +309,12 @@ const translations = {
     "security.c5.desc":     "Las consideraciones de privacidad están integradas en la arquitectura desde el inicio — no añadidas como capa de cumplimiento a posteriori.",
     "security.c6.title":    "Enfoque de implementación segura",
     "security.c6.desc":     "El código se escribe con prácticas de seguridad: validación de entradas, gestión de dependencias y valores predeterminados seguros en todo momento.",
-    "security.disclaimer":  "Las implementaciones de AITERA están diseñadas con principios preparados para el RGPD y prácticas de seguridad consciente. Esto no constituye una certificación de cumplimiento legal. Las organizaciones deben realizar su propia revisión legal y de cumplimiento.",
+    "security.disclaimer":  "Las implementaciones de avely.ai están diseñadas con principios preparados para el RGPD y prácticas de seguridad consciente. Esto no constituye una certificación de cumplimiento legal. Las organizaciones deben realizar su propia revisión legal y de cumplimiento.",
 
     /* About */
-    "about.label":       "Sobre AITERA",
+    "about.label":       "Sobre avely.ai",
     "about.title":       "Reinventando sistemas con IA",
-    "about.p1":          "AITERA ayuda a las organizaciones a reinventar sus sistemas con IA combinando rediseño estratégico, automatización inteligente e implementación de nivel empresarial.",
+    "about.p1":          "avely.ai ayuda a las organizaciones a reinventar sus sistemas con IA combinando rediseño estratégico, automatización inteligente e implementación de nivel empresarial.",
     "about.p2":          "Trabajamos con organizaciones que se toman en serio la transformación — no solo la experimentación. Nuestros proyectos están estructurados para generar cambio operativo medible, con el rigor y los estándares de seguridad que exigen los entornos empresariales.",
     "about.p3":          "Somos IA-first, orientados a la implementación y construidos para el largo plazo.",
     "about.cta":         "Iniciar una conversación",
@@ -336,7 +336,7 @@ const translations = {
     "contact.form.email":      "Email profesional",
     "contact.form.message":    "¿Cómo podemos ayudarte?",
     "contact.form.captcha":    "[ CAPTCHA — integrar reCAPTCHA o hCaptcha aquí antes del despliegue ]",
-    "contact.form.consent.text":   "Acepto que AITERA procese mis datos para responder a esta consulta. He leído la ",
+    "contact.form.consent.text":   "Acepto que avely.ai procese mis datos para responder a esta consulta. He leído la ",
     "contact.form.consent.privacy":"Política de Privacidad",
     "contact.form.submit":     "Enviar mensaje",
     "contact.form.privacyNote":"Tus datos se utilizan únicamente para responder a tu consulta. No vendemos ni compartimos tu información con terceros. Consulta nuestra Política de Privacidad para más detalles.",
@@ -344,7 +344,7 @@ const translations = {
     /* CTA Banner */
     "cta.label":    "El siguiente paso",
     "cta.title":    "Tus sistemas están listos para la IA. ¿Y tú?",
-    "cta.subtitle": "Reserva una consulta con AITERA y descubre dónde la transformación con IA genera mayor valor estratégico para tu organización.",
+    "cta.subtitle": "Reserva una consulta con avely.ai y descubre dónde la transformación con IA genera mayor valor estratégico para tu organización.",
     "cta.primary":  "Reservar Consulta",
     "cta.secondary":"Ver Servicios",
 
@@ -357,7 +357,7 @@ const translations = {
     "footer.privacy":    "Política de Privacidad",
     "footer.cookies":    "Política de Cookies",
     "footer.terms":      "Términos de Uso",
-    "footer.copyright":  "© 2025 AITERA. Todos los derechos reservados.",
+    "footer.copyright":  "© 2025 avely.ai. Todos los derechos reservados.",
 
     /* Cookie Banner */
     "cookie.text":    "Usamos cookies esenciales para que este sitio funcione. No usamos cookies de seguimiento ni publicidad. Consulta nuestra ",
@@ -374,8 +374,8 @@ const translations = {
     "terms.page.title":     "Términos de Uso",
 
     /* Page meta */
-    "_meta.title":       "AITERA — Reinventando Sistemas con IA",
-    "_meta.description": "AITERA ayuda a las organizaciones a rediseñar operaciones, flujos de trabajo y sistemas de decisión mediante inteligencia artificial. Transformación empresarial con IA.",
+    "_meta.title":       "avely.ai — Transformación Digital con IA",
+    "_meta.description": "avely.ai ayuda a las organizaciones a rediseñar operaciones, flujos de trabajo y sistemas de decisión mediante inteligencia artificial. Transformación empresarial con IA.",
   }
 };
 
