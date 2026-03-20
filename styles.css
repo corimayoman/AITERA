@@ -260,8 +260,14 @@ p { color: var(--muted); font-size: 1.05rem; line-height: 1.75; }
   color: var(--graphite);
   flex-shrink: 0;
   display: inline-flex;
-  align-items: baseline;
-  gap: 0;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Hexagon icon */
+.wm-icon {
+  flex-shrink: 0;
+  display: block;
 }
 
 /* .ai suffix uses Cormorant Garamond italic in brand fuchsia */

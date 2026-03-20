@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>avely.ai — Brand System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root { --f: #FF0A6C; --f2: #FF3D8A; --f3: #CC0055; --white: #FFFFFF; --black: #080810; --dark: #0D0D1A; --dark2: #13132A; --muted: #6B6B9A; --bg: #F2F2F8; --card: #FFFFFF; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--bg); font-family: Outfit, sans-serif; color: var(--black); min-height: 100vh; }
+    @keyframes fadeUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+    @keyframes drawLine { 0% { stroke-dashoffset: 300; } 100% { stroke-dashoffset: 0; } }
+    @keyframes popIn { 0% { transform: scale(0); opacity: 0; } 70% { transform: scale(1.15); } 100% { transform: scale(1); opacity: 1; } }
+    .page { max-width: 1000px; margin: 0 auto; padding: 72px 28px 120px; }
+    .hero { text-align: center; padding: 80px 20px 72px; position: relative; margin-bottom: 80px; animation: 0.8s ease 0s 1 normal both running fadeUp; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(255,10,108,0.04) 1px, transparent 1px) 0 0 / 32px 32px, linear-gradient(90deg, rgba(255,10,108,0.04) 1px, transparent 1px); pointer-events: none; }
+    .hero-eyebrow { font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--f); margin-bottom: 32px; font-weight: 400; animation: 0.6s ease 0.1s 1 normal both running fadeUp; opacity: 0; }
+    .hero-logo { display: flex; justify-content: center; align-items: baseline; gap: 0; margin-bottom: 24px; animation: 0.7s ease 0.2s 1 normal both running fadeUp; opacity: 0; }
+    .hero-wm { font-family: Outfit, sans-serif; font-size: 88px; font-weight: 400; letter-spacing: 0.1em; color: var(--black); line-height: 1; display: inline-flex; align-items: baseline; }
+    .hero-wm .sfx { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 500; font-size: 1.12em; letter-spacing: 0.03em; color: var(--f); }
+    .hero-tagline { font-size: 11px; letter-spacing: 0.38em; text-transform: uppercase; color: var(--muted); font-weight: 300; margin-bottom: 16px; animation: 0.6s ease 0.35s 1 normal both running fadeUp; opacity: 0; }
+    .hero-badge { display: inline-block; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--f); border: 1px solid rgba(255,10,108,0.28); padding: 5px 18px; font-weight: 400; animation: 0.6s ease 0.45s 1 normal both running fadeUp; opacity: 0; }
+    .section { margin-bottom: 64px; animation: 0.6s ease 0s 1 normal both running fadeUp; opacity: 0; }
+    .section:nth-child(2) { animation-delay: 0.1s; } .section:nth-child(3) { animation-delay: 0.15s; } .section:nth-child(4) { animation-delay: 0.2s; } .section:nth-child(5) { animation-delay: 0.25s; } .section:nth-child(6) { animation-delay: 0.3s; } .section:nth-child(7) { animation-delay: 0.35s; } .section:nth-child(8) { animation-delay: 0.4s; } .section:nth-child(9) { animation-delay: 0.45s; }
+    .sec-hdr { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .sec-n { font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--f); font-weight: 500; white-space: nowrap; }
+    .sec-line { flex: 1; height: 1px; background: rgba(255,10,108,0.14); }
+    .sec-t { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); white-space: nowrap; font-weight: 400; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+    .grid4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px; }
+    .card { display: flex; align-items: center; justify-content: center; padding: 44px 32px; position: relative; border: 1px solid rgba(255,10,108,0.13); background: var(--card); transition: border-color 0.2s; min-height: 180px; }
+    .card:hover { border-color: rgba(255,10,108,0.35); }
+    .card.dark { background: var(--dark); border-color: rgba(255,10,108,0.18); }
+    .card.dark2 { background: var(--dark2); border-color: rgba(255,10,108,0.18); }
+    .card.black { background: var(--black); border-color: rgba(255,10,108,0.2); }
+    .card.fuchsia { background: var(--f); border-color: var(--f); }
+    .card.gridbg { background-image: linear-gradient(rgba(255,10,108,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,10,108,0.055) 1px, transparent 1px); background-size: 24px 24px; background-color: var(--card); }
+    .lbl { position: absolute; bottom: 10px; right: 14px; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,10,108,0.2); font-weight: 400; }
+    .card.dark .lbl, .card.dark2 .lbl, .card.black .lbl { color: rgba(255,255,255,0.1); }
+    .card.fuchsia .lbl { color: rgba(255,255,255,0.3); }
+    .wm-xl { font-size: 58px; } .wm-lg { font-size: 46px; } .wm-md { font-size: 34px; } .wm-sm { font-size: 24px; }
+    .wm { font-family: Outfit, sans-serif; font-weight: 400; letter-spacing: 0.12em; color: var(--black); line-height: 1; display: inline-flex; align-items: baseline; gap: 0; }
+    .wm .suffix { font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 500; letter-spacing: 0.04em; color: var(--f); }
+    .wm-xl .suffix, .wm-lg .suffix, .wm-md .suffix, .wm-sm .suffix { font-size: 1.14em; }
+    .wm.inv { color: var(--white); } .wm.inv .suffix { color: var(--f); }
+    .wm.inv-f { color: var(--white); } .wm.inv-f .suffix { color: rgba(255,255,255,0.78); }
+    .hex-icon path.hex { stroke-dasharray: 300; stroke-dashoffset: 300; animation: 1.2s ease 0.5s 1 normal forwards running drawLine; }
+    .hex-icon circle.dot { transform-origin: center center; animation: 0.4s ease 1.4s 1 normal both running popIn; opacity: 0; }
+    .logo-row { display: flex; align-items: center; gap: 18px; }
+    .logo-col { display: flex; flex-direction: column; gap: 5px; }
+    .tgl { font-size: 9px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--muted); font-weight: 300; }
+    .tgl.inv { color: rgba(255,255,255,0.2); } .tgl.inv-f { color: rgba(255,255,255,0.5); }
+    .stk { display: flex; flex-direction: column; align-items: center; gap: 13px; }
+    .stk-rule { width: 30px; height: 2px; background: var(--f); } .stk-rule.inv { background: rgba(255,255,255,0.22); }
+    .stk-sub { font-size: 8px; letter-spacing: 0.42em; text-transform: uppercase; color: var(--muted); font-weight: 300; } .stk-sub.inv { color: rgba(255,255,255,0.2); }
+    .outline-wrap { display: flex; align-items: center; gap: 18px; }
+    .mono-card { display: flex; align-items: center; justify-content: center; padding: 36px; border: 1px solid rgba(255,10,108,0.13); background: var(--card); min-height: 140px; }
+    .mono-card.dark-bg { background: var(--dark); }
+    .biz-card { width: 100%; aspect-ratio: 1.75 / 1; background: var(--black); padding: 32px 36px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
+    .biz-card::after { content: ""; position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; border: 1px solid rgba(255,10,108,0.15); border-radius: 50%; }
+    .biz-card::before { content: ""; position: absolute; top: -70px; right: -70px; width: 240px; height: 240px; border: 1px solid rgba(255,10,108,0.08); border-radius: 50%; }
+    .biz-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    .biz-bottom { display: flex; flex-direction: column; gap: 3px; }
+    .biz-name { font-size: 15px; font-weight: 400; color: var(--white); letter-spacing: 0.06em; }
+    .biz-role { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,10,108,0.8); font-weight: 400; }
+    .biz-contact { font-size: 9px; letter-spacing: 0.06em; color: rgba(255,255,255,0.3); font-weight: 300; }
+    .biz-card.light { background: var(--white); border: 1px solid rgba(255,10,108,0.13); }
+    .biz-card.light::after { border-color: rgba(255,10,108,0.08); } .biz-card.light::before { border-color: rgba(255,10,108,0.04); }
+    .biz-card.light .biz-name { color: var(--black); } .biz-card.light .biz-contact { color: rgba(8,8,16,0.35); }
+    .email-sig { background: var(--white); border: 1px solid rgba(255,10,108,0.13); padding: 28px 32px; display: flex; align-items: center; gap: 28px; }
+    .sig-divider { width: 1px; height: 56px; background: rgba(255,10,108,0.2); }
+    .sig-info { display: flex; flex-direction: column; gap: 3px; }
+    .sig-name { font-size: 14px; font-weight: 400; color: var(--black); letter-spacing: 0.04em; }
+    .sig-role { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--f); font-weight: 400; }
+    .sig-contacts { display: flex; gap: 16px; margin-top: 4px; flex-wrap: wrap; }
+    .sig-contact { font-size: 10px; color: var(--muted); letter-spacing: 0.04em; }
+    .linkedin-banner { width: 100%; aspect-ratio: 4 / 1; background: var(--dark); display: flex; align-items: center; justify-content: space-between; padding: 0 48px; position: relative; overflow: hidden; }
+    .linkedin-banner::before { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(255,10,108,0.04) 1px, transparent 1px) 0 0 / 28px 28px, linear-gradient(90deg, rgba(255,10,108,0.04) 1px, transparent 1px); }
+    .linkedin-banner::after { content: ""; position: absolute; right: -80px; top: 50%; transform: translateY(-50%); width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,10,108,0.12), transparent 70%); }
+    .banner-left, .banner-right { position: relative; z-index: 1; }
+    .banner-right { text-align: right; }
+    .banner-tagline { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.3); font-weight: 300; }
+    .banner-claim { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 22px; color: rgba(255,255,255,0.7); font-weight: 400; margin-top: 4px; }
+    .browser-mock { background: #e8e8f0; border-radius: 8px 8px 0 0; padding: 10px 16px 0; }
+    .browser-tab { display: inline-flex; align-items: center; gap: 8px; background: var(--white); padding: 7px 16px 10px; border-radius: 6px 6px 0 0; font-size: 11px; color: #333; letter-spacing: 0.02em; }
+    .browser-content { background: var(--white); padding: 24px; border: 1px solid rgba(0,0,0,0.06); font-size: 11px; color: var(--muted); letter-spacing: 0.04em; min-height: 60px; display: flex; align-items: center; }
+    .pal-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; }
+    .pal-swatch { display: flex; flex-direction: column; }
+    .pal-color { height: 56px; }
+    .pal-info { padding: 10px 12px; background: var(--white); border-right: 1px solid rgba(255,10,108,0.1); border-bottom: 1px solid rgba(255,10,108,0.1); border-left: 1px solid rgba(255,10,108,0.1); }
+    .pal-name { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--black); font-weight: 500; }
+    .pal-hex { font-size: 9px; letter-spacing: 0.06em; color: var(--muted); margin-top: 2px; }
+    .pal-use { font-size: 8px; letter-spacing: 0.08em; color: rgba(255,10,108,0.6); margin-top: 2px; }
+    .notes { background: var(--dark); padding: 44px 48px; margin-top: 0; }
+    .notes-title { font-family: Outfit, sans-serif; font-size: 13px; font-weight: 400; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 28px; }
+    .notes-title em { font-family: "Cormorant Garamond", serif; font-style: italic; color: var(--f); font-size: 17px; }
+    .notes-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; }
+    .note-lbl { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--f); margin-bottom: 8px; font-weight: 500; }
+    .note-val { font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.8; }
+    .note-val strong { color: rgba(255,255,255,0.8); font-weight: 400; }
+    .rule-note { background: rgba(255,10,108,0.04); border: 1px solid rgba(255,10,108,0.1); padding: 16px 20px; margin-top: 16px; font-size: 11px; color: var(--muted); letter-spacing: 0.04em; line-height: 1.6; }
+    .rule-note strong { color: var(--f); font-weight: 500; }
+    @media (max-width: 640px) { .grid2, .grid3, .grid4 { grid-template-columns: 1fr; } .notes-grid { grid-template-columns: 1fr; } .pal-grid { grid-template-columns: repeat(3, 1fr); } .linkedin-banner { padding: 0 24px; } .banner-claim { font-size: 16px; } }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Brand System · 10 / 10</div>
+    <div class="hero-logo">
+      <span class="hero-wm">avely<span class="sfx">.ai</span></span>
+    </div>
+    <div class="hero-tagline">AI-Powered Digital Transformation</div>
+    <div class="hero-badge">Outfit 400 · Cormorant Garamond Italic · Complete Brand System</div>
+  </div>
+
+  <!-- 01 WORDMARK -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">01</span><div class="sec-line"></div><span class="sec-t">Wordmark — All Variants</span></div>
+    <div class="grid2">
+      <div class="card gridbg"><span class="wm wm-xl">avely<span class="suffix">.ai</span></span><span class="lbl">Light / Grid</span></div>
+      <div class="card dark"><span class="wm wm-xl inv">avely<span class="suffix">.ai</span></span><span class="lbl">Dark</span></div>
+      <div class="card fuchsia"><span class="wm wm-xl inv-f">avely<span class="suffix">.ai</span></span><span class="lbl">Fuchsia</span></div>
+      <div class="card black"><span class="wm wm-xl inv">avely<span class="suffix">.ai</span></span><span class="lbl">Black</span></div>
+    </div>
+    <div class="rule-note" style="margin-top:10px"><strong>Microdetail:</strong> The dot above the "y" ascender is replaced with the brand fuchsia — creating a visual lock between the wordmark and the icon's apex dot. This is the signature detail that makes the system coherent.</div>
+  </div>
+
+  <!-- 02 WORDMARK + ICON -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">02</span><div class="sec-line"></div><span class="sec-t">Wordmark + Icon</span></div>
+    <div class="grid2">
+      <div class="card">
+        <div class="logo-row">
+          <svg class="hex-icon" width="48" height="48" viewBox="0 0 44 44" fill="none">
+            <path class="hex" d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none" stroke-dasharray="300"/>
+            <line x1="14" y1="8.5" x2="14" y2="35.5" stroke="#FF0A6C" stroke-width="0.45" opacity="0.22"/>
+            <line x1="22" y1="4" x2="22" y2="40" stroke="#FF0A6C" stroke-width="0.45" opacity="0.22"/>
+            <line x1="30" y1="8.5" x2="30" y2="35.5" stroke="#FF0A6C" stroke-width="0.45" opacity="0.22"/>
+            <line x1="6" y1="22" x2="38" y2="22" stroke="#FF0A6C" stroke-width="0.45" opacity="0.22"/>
+            <path d="M15 32 L22 14 L29 32" stroke="#FF0A6C" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle class="dot" cx="22" cy="14" r="2.8" fill="#FF0A6C"/>
+          </svg>
+          <div class="logo-col">
+            <span class="wm wm-md">avely<span class="suffix">.ai</span></span>
+            <span class="tgl">Digital Transformation</span>
+          </div>
+        </div>
+        <span class="lbl">Light</span>
+      </div>
+      <div class="card dark">
+        <div class="logo-row">
+          <svg width="48" height="48" viewBox="0 0 44 44" fill="none">
+            <path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/>
+            <line x1="14" y1="8.5" x2="14" y2="35.5" stroke="#FF0A6C" stroke-width="0.45" opacity="0.16"/>
+            <line x1="22" y1="4" x2="22" y2="40" stroke="#FF0A6C" stroke-width="0.45" opacity="0.16"/>
+            <line x1="30" y1="8.5" x2="30" y2="35.5" stroke="#FF0A6C" stroke-width="0.45" opacity="0.16"/>
+            <line x1="6" y1="22" x2="38" y2="22" stroke="#FF0A6C" stroke-width="0.45" opacity="0.16"/>
+            <path d="M15 32 L22 14 L29 32" stroke="#ffffff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="22" cy="14" r="2.8" fill="#FF0A6C"/>
+          </svg>
+          <div class="logo-col">
+            <span class="wm wm-md inv">avely<span class="suffix">.ai</span></span>
+            <span class="tgl inv">Digital Transformation</span>
+          </div>
+        </div>
+        <span class="lbl">Dark</span>
+      </div>
+      <div class="card fuchsia">
+        <div class="logo-row">
+          <svg width="48" height="48" viewBox="0 0 44 44" fill="none">
+            <path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+            <line x1="14" y1="8.5" x2="14" y2="35.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.45"/>
+            <line x1="22" y1="4" x2="22" y2="40" stroke="rgba(255,255,255,0.12)" stroke-width="0.45"/>
+            <line x1="30" y1="8.5" x2="30" y2="35.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.45"/>
+            <line x1="6" y1="22" x2="38" y2="22" stroke="rgba(255,255,255,0.12)" stroke-width="0.45"/>
+            <path d="M15 32 L22 14 L29 32" stroke="#ffffff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="22" cy="14" r="2.8" fill="#ffffff"/>
+          </svg>
+          <div class="logo-col">
+            <span class="wm wm-md inv-f">avely<span class="suffix">.ai</span></span>
+            <span class="tgl inv-f">Digital Transformation</span>
+          </div>
+        </div>
+        <span class="lbl">Fuchsia</span>
+      </div>
+      <div class="card black">
+        <div class="logo-row">
+          <svg width="48" height="48" viewBox="0 0 44 44" fill="none">
+            <path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/>
+            <line x1="14" y1="8.5" x2="14" y2="35.5" stroke="#FF0A6C" stroke-width="0.45" opacity="0.18"/>
+            <line x1="22" y1="4" x2="22" y2="40" stroke="#FF0A6C" stroke-width="0.45" opacity="0.18"/>
+            <line x1="30" y1="8.5" x2="30" y2="35.5" stroke="#FF0A6C" stroke-width="0.45" opacity="0.18"/>
+            <line x1="6" y1="22" x2="38" y2="22" stroke="#FF0A6C" stroke-width="0.45" opacity="0.18"/>
+            <path d="M15 32 L22 14 L29 32" stroke="#ffffff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="22" cy="14" r="2.8" fill="#FF0A6C"/>
+          </svg>
+          <div class="logo-col">
+            <span class="wm wm-md inv">avely<span class="suffix">.ai</span></span>
+            <span class="tgl inv">Digital Transformation</span>
+          </div>
+        </div>
+        <span class="lbl">Black</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 VERTICAL STACK -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">03</span><div class="sec-line"></div><span class="sec-t">Vertical Stack — Cards / Documents</span></div>
+    <div class="grid2">
+      <div class="card" style="min-height:250px">
+        <div class="stk">
+          <svg width="42" height="42" viewBox="0 0 44 44" fill="none">
+            <path d="M22 2 L40 12 L40 32 L22 42 L4 32 L4 12 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/>
+            <path d="M13 34 L22 12 L31 34" stroke="#080810" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="22" cy="12" r="3" fill="#FF0A6C"/>
+          </svg>
+          <span class="wm wm-lg">avely<span class="suffix">.ai</span></span>
+          <div class="stk-rule"></div>
+          <span class="stk-sub">AI · Digital Transformation</span>
+        </div>
+        <span class="lbl">Vertical light</span>
+      </div>
+      <div class="card dark" style="min-height:250px">
+        <div class="stk">
+          <svg width="42" height="42" viewBox="0 0 44 44" fill="none">
+            <path d="M22 2 L40 12 L40 32 L22 42 L4 32 L4 12 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/>
+            <path d="M13 34 L22 12 L31 34" stroke="#ffffff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="22" cy="12" r="3" fill="#FF0A6C"/>
+          </svg>
+          <span class="wm wm-lg inv">avely<span class="suffix">.ai</span></span>
+          <div class="stk-rule inv"></div>
+          <span class="stk-sub inv">AI · Digital Transformation</span>
+        </div>
+        <span class="lbl">Vertical dark</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 ICON STANDALONE -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">04</span><div class="sec-line"></div><span class="sec-t">Icon — App / Favicon / Avatar</span></div>
+    <div class="grid3">
+      <div class="card" style="min-height:140px">
+        <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+          <rect width="72" height="72" rx="16" fill="#F2F2F8"/>
+          <path d="M36 6 L60 20 L60 52 L36 66 L12 52 L12 20 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/>
+          <line x1="24" y1="13" x2="24" y2="59" stroke="#FF0A6C" stroke-width="0.5" opacity="0.18"/>
+          <line x1="36" y1="6" x2="36" y2="66" stroke="#FF0A6C" stroke-width="0.5" opacity="0.18"/>
+          <line x1="48" y1="13" x2="48" y2="59" stroke="#FF0A6C" stroke-width="0.5" opacity="0.18"/>
+          <line x1="12" y1="36" x2="60" y2="36" stroke="#FF0A6C" stroke-width="0.5" opacity="0.18"/>
+          <path d="M24 54 L36 20 L48 54" stroke="#080810" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="36" cy="20" r="4" fill="#FF0A6C"/>
+        </svg>
+        <span class="lbl">Light</span>
+      </div>
+      <div class="card dark" style="min-height:140px">
+        <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+          <rect width="72" height="72" rx="16" fill="#13132A"/>
+          <path d="M36 6 L60 20 L60 52 L36 66 L12 52 L12 20 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/>
+          <line x1="24" y1="13" x2="24" y2="59" stroke="#FF0A6C" stroke-width="0.5" opacity="0.14"/>
+          <line x1="36" y1="6" x2="36" y2="66" stroke="#FF0A6C" stroke-width="0.5" opacity="0.14"/>
+          <line x1="48" y1="13" x2="48" y2="59" stroke="#FF0A6C" stroke-width="0.5" opacity="0.14"/>
+          <line x1="12" y1="36" x2="60" y2="36" stroke="#FF0A6C" stroke-width="0.5" opacity="0.14"/>
+          <path d="M24 54 L36 20 L48 54" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="36" cy="20" r="4" fill="#FF0A6C"/>
+        </svg>
+        <span class="lbl">Dark</span>
+      </div>
+      <div class="card fuchsia" style="min-height:140px">
+        <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+          <rect width="72" height="72" rx="16" fill="rgba(255,255,255,0.12)"/>
+          <path d="M36 6 L60 20 L60 52 L36 66 L12 52 L12 20 Z" stroke="rgba(255,255,255,0.38)" stroke-width="1.5" fill="none"/>
+          <line x1="24" y1="13" x2="24" y2="59" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+          <line x1="36" y1="6" x2="36" y2="66" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+          <line x1="48" y1="13" x2="48" y2="59" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+          <line x1="12" y1="36" x2="60" y2="36" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+          <path d="M24 54 L36 20 L48 54" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="36" cy="20" r="4" fill="#ffffff"/>
+        </svg>
+        <span class="lbl" style="color:rgba(255,255,255,0.3)">Fuchsia</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 OUTLINE VARIANT -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">05</span><div class="sec-line"></div><span class="sec-t">Outline Variant — Watermark / Premium BG</span></div>
+    <div class="grid2">
+      <div class="mono-card">
+        <div class="outline-wrap">
+          <svg width="48" height="48" viewBox="0 0 44 44" fill="none">
+            <path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="1" fill="none"/>
+            <path d="M15 32 L22 14 L29 32" stroke="#FF0A6C" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="22" cy="14" r="2" fill="none" stroke="#FF0A6C" stroke-width="1"/>
+          </svg>
+          <span class="wm wm-lg" style="font-weight:300;color:#FF0A6C;-webkit-text-stroke:0.5px #FF0A6C;-webkit-text-fill-color:transparent">avely<span class="suffix" style="-webkit-text-fill-color:#FF0A6C">.ai</span></span>
+        </div>
+        <span class="lbl">Outline light</span>
+      </div>
+      <div class="mono-card dark-bg">
+        <div class="outline-wrap">
+          <svg width="48" height="48" viewBox="0 0 44 44" fill="none">
+            <path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/>
+            <path d="M15 32 L22 14 L29 32" stroke="rgba(255,255,255,0.3)" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="22" cy="14" r="2" fill="none" stroke="#FF0A6C" stroke-width="1"/>
+          </svg>
+          <span class="wm wm-lg" style="font-weight:300;-webkit-text-stroke:0.5px rgba(255,255,255,0.3);-webkit-text-fill-color:transparent">avely<span class="suffix" style="-webkit-text-fill-color:#FF0A6C">.ai</span></span>
+        </div>
+        <span class="lbl" style="color:rgba(255,255,255,0.1)">Outline dark</span>
+      </div>
+    </div>
+    <div class="rule-note"><strong>Usage:</strong> Outline variant is for complex backgrounds, watermarks, and premium print materials where a full-fill logo would be too heavy.</div>
+  </div>
+
+  <!-- 06 MONOCHROME -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">06</span><div class="sec-line"></div><span class="sec-t">Monochrome — Stamps / Single-Color Print</span></div>
+    <div class="grid3">
+      <div class="mono-card" style="background:#080810"><span class="wm wm-md" style="color:#ffffff">avely<span class="suffix" style="color:#ffffff">.ai</span></span><span class="lbl" style="color:rgba(255,255,255,0.1)">Black bg</span></div>
+      <div class="mono-card" style="background:#ffffff"><span class="wm wm-md" style="color:#080810">avely<span class="suffix" style="color:#080810">.ai</span></span><span class="lbl">White bg</span></div>
+      <div class="mono-card" style="background:#FF0A6C"><span class="wm wm-md" style="color:#ffffff">avely<span class="suffix" style="color:#ffffff">.ai</span></span><span class="lbl" style="color:rgba(255,255,255,0.3)">Fuchsia bg</span></div>
+    </div>
+    <div class="rule-note"><strong>Usage:</strong> Single-color version for stamps, embossing, fax, or situations where only one color ink is available.</div>
+  </div>
+
+  <!-- 07 SPACING RULE -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">07</span><div class="sec-line"></div><span class="sec-t">Spacing Rule — Clear Space &amp; Minimum Size</span></div>
+    <div class="card gridbg" style="padding:56px 48px;flex-direction:column;gap:32px;min-height:auto">
+      <div style="position:relative;display:inline-block;padding:20px;border:1px dashed rgba(255,10,108,0.25)">
+        <div class="logo-row">
+          <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+            <path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/>
+            <path d="M15 32 L22 14 L29 32" stroke="#FF0A6C" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="22" cy="14" r="2.8" fill="#FF0A6C"/>
+          </svg>
+          <span class="wm wm-md">avely<span class="suffix">.ai</span></span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;width:100%">
+        <div><div class="note-lbl" style="color:#FF0A6C;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:6px;font-weight:500">Clear space</div><div style="font-size:11px;color:var(--muted);line-height:1.7">Minimum clear space = height of the letter "a" in the wordmark on all four sides. Never crowd the logo.</div></div>
+        <div><div class="note-lbl" style="color:#FF0A6C;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:6px;font-weight:500">Minimum size</div><div style="font-size:11px;color:var(--muted);line-height:1.7">Digital: 120px wide minimum. Print: 30mm wide minimum. Below these sizes, use icon only.</div></div>
+        <div><div class="note-lbl" style="color:#FF0A6C;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:6px;font-weight:500">Icon-to-wordmark gap</div><div style="font-size:11px;color:var(--muted);line-height:1.7">Gap between icon and wordmark = 1× the icon height. This ratio must be preserved at all scales.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 08a BUSINESS CARD — Ezequiel Pellettieri -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">08a</span><div class="sec-line"></div><span class="sec-t">Business Card — Ezequiel Pellettieri</span></div>
+    <div class="grid2">
+      <div class="biz-card">
+        <div class="biz-top"><div class="logo-row" style="gap:12px"><svg width="28" height="28" viewBox="0 0 44 44" fill="none"><path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/><path d="M15 32 L22 14 L29 32" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="14" r="2.5" fill="#FF0A6C"/></svg><span class="wm wm-sm inv">avely<span class="suffix">.ai</span></span></div></div>
+        <div class="biz-bottom"><div class="biz-name">Ezequiel Pellettieri</div><div class="biz-role">Founder &amp; Chief Financial AI Officer</div><div class="biz-contact" style="margin-top:8px">pelle@avely.ai</div><div class="biz-contact">avely.ai</div></div>
+        <span class="lbl" style="color:rgba(255,255,255,0.1)">Dark version</span>
+      </div>
+      <div class="biz-card light">
+        <div class="biz-top"><div class="logo-row" style="gap:12px"><svg width="28" height="28" viewBox="0 0 44 44" fill="none"><path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/><path d="M15 32 L22 14 L29 32" stroke="#080810" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="14" r="2.5" fill="#FF0A6C"/></svg><span class="wm wm-sm">avely<span class="suffix">.ai</span></span></div></div>
+        <div class="biz-bottom"><div class="biz-name">Ezequiel Pellettieri</div><div class="biz-role">Founder &amp; Chief Financial AI Officer</div><div class="biz-contact" style="margin-top:8px">pelle@avely.ai</div><div class="biz-contact">avely.ai</div></div>
+        <span class="lbl">Light version</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 08b BUSINESS CARD — Sandra Frutuoso -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">08b</span><div class="sec-line"></div><span class="sec-t">Business Card — Sandra Frutuoso</span></div>
+    <div class="grid2">
+      <div class="biz-card">
+        <div class="biz-top"><div class="logo-row" style="gap:12px"><svg width="28" height="28" viewBox="0 0 44 44" fill="none"><path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/><path d="M15 32 L22 14 L29 32" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="14" r="2.5" fill="#FF0A6C"/></svg><span class="wm wm-sm inv">avely<span class="suffix">.ai</span></span></div></div>
+        <div class="biz-bottom"><div class="biz-name">Sandra Frutuoso</div><div class="biz-role">Founder &amp; Chief Executive AI Officer</div><div class="biz-contact" style="margin-top:8px">san@avely.ai</div><div class="biz-contact">avely.ai</div></div>
+        <span class="lbl" style="color:rgba(255,255,255,0.1)">Dark</span>
+      </div>
+      <div class="biz-card light">
+        <div class="biz-top"><div class="logo-row" style="gap:12px"><svg width="28" height="28" viewBox="0 0 44 44" fill="none"><path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/><path d="M15 32 L22 14 L29 32" stroke="#080810" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="14" r="2.5" fill="#FF0A6C"/></svg><span class="wm wm-sm">avely<span class="suffix">.ai</span></span></div></div>
+        <div class="biz-bottom"><div class="biz-name">Sandra Frutuoso</div><div class="biz-role">Founder &amp; Chief Executive AI Officer</div><div class="biz-contact" style="margin-top:8px">san@avely.ai</div><div class="biz-contact">avely.ai</div></div>
+        <span class="lbl">Light</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 08c BUSINESS CARD — Martin Moresco -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">08c</span><div class="sec-line"></div><span class="sec-t">Business Card — Martin Moresco</span></div>
+    <div class="grid2">
+      <div class="biz-card">
+        <div class="biz-top"><div class="logo-row" style="gap:12px"><svg width="28" height="28" viewBox="0 0 44 44" fill="none"><path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/><path d="M15 32 L22 14 L29 32" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="14" r="2.5" fill="#FF0A6C"/></svg><span class="wm wm-sm inv">avely<span class="suffix">.ai</span></span></div></div>
+        <div class="biz-bottom"><div class="biz-name">Martin Moresco</div><div class="biz-role">Founder &amp; Chief Business AI Officer</div><div class="biz-contact" style="margin-top:8px">more@avely.ai</div><div class="biz-contact">avely.ai</div></div>
+        <span class="lbl" style="color:rgba(255,255,255,0.1)">Dark</span>
+      </div>
+      <div class="biz-card light">
+        <div class="biz-top"><div class="logo-row" style="gap:12px"><svg width="28" height="28" viewBox="0 0 44 44" fill="none"><path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/><path d="M15 32 L22 14 L29 32" stroke="#080810" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="14" r="2.5" fill="#FF0A6C"/></svg><span class="wm wm-sm">avely<span class="suffix">.ai</span></span></div></div>
+        <div class="biz-bottom"><div class="biz-name">Martin Moresco</div><div class="biz-role">Founder &amp; Chief Business AI Officer</div><div class="biz-contact" style="margin-top:8px">more@avely.ai</div><div class="biz-contact">avely.ai</div></div>
+        <span class="lbl">Light</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 09a EMAIL SIGNATURE — Ezequiel Pellettieri -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">09a</span><div class="sec-line"></div><span class="sec-t">Email Signature — Ezequiel Pellettieri</span></div>
+    <div class="email-sig">
+      <div class="logo-row" style="gap:12px"><svg width="32" height="32" viewBox="0 0 44 44" fill="none"><path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/><path d="M15 32 L22 14 L29 32" stroke="#080810" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="14" r="2.5" fill="#FF0A6C"/></svg><span class="wm wm-sm">avely<span class="suffix">.ai</span></span></div>
+      <div class="sig-divider"></div>
+      <div class="sig-info"><div class="sig-name">Ezequiel Pellettieri</div><div class="sig-role">Founder &amp; Chief Financial AI Officer · avely.ai</div><div class="sig-contacts"><span class="sig-contact">pelle@avely.ai</span><span class="sig-contact">avely.ai</span><span class="sig-contact">LinkedIn: /in/pellepellettieri</span></div></div>
+    </div>
+  </div>
+
+  <!-- 09b EMAIL SIGNATURE — Sandra Frutuoso -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">09b</span><div class="sec-line"></div><span class="sec-t">Email Signature — Sandra Frutuoso</span></div>
+    <div class="email-sig">
+      <div class="logo-row" style="gap:12px"><svg width="32" height="32" viewBox="0 0 44 44" fill="none"><path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/><path d="M15 32 L22 14 L29 32" stroke="#080810" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="14" r="2.5" fill="#FF0A6C"/></svg><span class="wm wm-sm">avely<span class="suffix">.ai</span></span></div>
+      <div class="sig-divider"></div>
+      <div class="sig-info"><div class="sig-name">Sandra Frutuoso</div><div class="sig-role">Founder &amp; Chief Executive AI Officer · avely.ai</div><div class="sig-contacts"><span class="sig-contact">san@avely.ai</span><span class="sig-contact">avely.ai</span></div></div>
+    </div>
+  </div>
+
+  <!-- 09c EMAIL SIGNATURE — Martin Moresco -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">09c</span><div class="sec-line"></div><span class="sec-t">Email Signature — Martin Moresco</span></div>
+    <div class="email-sig">
+      <div class="logo-row" style="gap:12px"><svg width="32" height="32" viewBox="0 0 44 44" fill="none"><path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/><path d="M15 32 L22 14 L29 32" stroke="#080810" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="14" r="2.5" fill="#FF0A6C"/></svg><span class="wm wm-sm">avely<span class="suffix">.ai</span></span></div>
+      <div class="sig-divider"></div>
+      <div class="sig-info"><div class="sig-name">Martin Moresco</div><div class="sig-role">Founder &amp; Chief Business AI Officer · avely.ai</div><div class="sig-contacts"><span class="sig-contact">more@avely.ai</span><span class="sig-contact">avely.ai</span></div></div>
+    </div>
+  </div>
+
+  <!-- 10 LINKEDIN BANNER -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">10</span><div class="sec-line"></div><span class="sec-t">LinkedIn Banner</span></div>
+    <div class="linkedin-banner">
+      <div class="banner-left">
+        <div class="logo-row" style="gap:14px"><svg width="36" height="36" viewBox="0 0 44 44" fill="none"><path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="1.5" fill="none"/><path d="M15 32 L22 14 L29 32" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="14" r="2.5" fill="#FF0A6C"/></svg><span class="wm wm-md inv">avely<span class="suffix">.ai</span></span></div>
+      </div>
+      <div class="banner-right"><div class="banner-tagline">AI-Powered</div><div class="banner-claim">Digital Transformation</div></div>
+    </div>
+  </div>
+
+  <!-- 11 FAVICON IN BROWSER -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">11</span><div class="sec-line"></div><span class="sec-t">Favicon — Browser Tab</span></div>
+    <div class="browser-mock">
+      <div class="browser-tab">
+        <svg width="16" height="16" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="8" fill="#0D0D1A"/><path d="M22 4 L38 13 L38 31 L22 40 L6 31 L6 13 Z" stroke="#FF0A6C" stroke-width="2" fill="none"/><path d="M15 32 L22 14 L29 32" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="14" r="3.5" fill="#FF0A6C"/></svg>
+        avely.ai — AI-Powered Digital Transformation
+      </div>
+    </div>
+    <div class="browser-content">avely.ai · favicon renders clearly at 16×16px — the hexagon outline + A shape + fuchsia dot remain legible even at minimum size.</div>
+  </div>
+
+  <!-- 12 COLOR PALETTE -->
+  <div class="section">
+    <div class="sec-hdr"><span class="sec-n">12</span><div class="sec-line"></div><span class="sec-t">Color Palette</span></div>
+    <div class="pal-grid">
+      <div class="pal-swatch"><div class="pal-color" style="background:#FF0A6C"></div><div class="pal-info"><div class="pal-name">Fuchsia</div><div class="pal-hex">#FF0A6C</div><div class="pal-use">Primary · Brand</div></div></div>
+      <div class="pal-swatch"><div class="pal-color" style="background:#FF3D8A"></div><div class="pal-info"><div class="pal-name">F. Light</div><div class="pal-hex">#FF3D8A</div><div class="pal-use">Hover · Accent</div></div></div>
+      <div class="pal-swatch"><div class="pal-color" style="background:#CC0055"></div><div class="pal-info"><div class="pal-name">F. Deep</div><div class="pal-hex">#CC0055</div><div class="pal-use">Pressed · Dark</div></div></div>
+      <div class="pal-swatch"><div class="pal-color" style="background:#FFFFFF;border:1px solid #eee"></div><div class="pal-info"><div class="pal-name">White</div><div class="pal-hex">#FFFFFF</div><div class="pal-use">Background</div></div></div>
+      <div class="pal-swatch"><div class="pal-color" style="background:#0D0D1A"></div><div class="pal-info"><div class="pal-name">Dark</div><div class="pal-hex">#0D0D1A</div><div class="pal-use">Dark BG</div></div></div>
+      <div class="pal-swatch"><div class="pal-color" style="background:#080810"></div><div class="pal-info"><div class="pal-name">Black</div><div class="pal-hex">#080810</div><div class="pal-use">Text · Black BG</div></div></div>
+    </div>
+  </div>
+
+  <!-- BRAND NOTES -->
+  <div class="notes">
+    <div class="notes-title">Brand guidelines — avely<em>.ai</em></div>
+    <div class="notes-grid">
+      <div>
+        <div class="note-lbl">Typography system</div>
+        <div class="note-val"><strong>Outfit 400</strong> — wordmark, UI, body copy<br><strong>Cormorant Garamond Italic 500</strong> — .ai suffix only<br><br>The contrast between geometric sans and refined italic serif signals: structured intelligence meets human insight.</div>
+      </div>
+      <div>
+        <div class="note-lbl">Icon concept</div>
+        <div class="note-val"><strong>Hexagon</strong> = structure, neural network, precision.<br><strong>A without crossbar</strong> = forward movement, no barriers.<br><strong>Fuchsia apex dot</strong> = AI as the catalyst — the point where everything converges.<br><br>The dot echoes the brand accent in the wordmark.</div>
+      </div>
+      <div>
+        <div class="note-lbl">Usage map</div>
+        <div class="note-val"><strong>01–02</strong> → Web, LinkedIn, presentations<br><strong>03</strong> → Business cards, letterhead<br><strong>04</strong> → App icon, favicon, social avatar<br><strong>05</strong> → Watermarks, premium print<br><strong>06</strong> → Single-color stamping<br><strong>07</strong> → Spacing reference<br><strong>08–11</strong> → Applied brand collateral</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
