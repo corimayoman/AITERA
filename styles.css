@@ -1061,15 +1061,8 @@ p { color: var(--muted); font-size: 1.05rem; line-height: 1.75; }
   line-height: 1.55;
 }
 
-/* CAPTCHA placeholder */
-.captcha-placeholder {
-  background: var(--white);
-  border: 1.5px dashed var(--border);
-  border-radius: var(--radius-sm);
-  padding: 1rem;
-  text-align: center;
-  font-size: 0.82rem;
-  color: var(--muted);
+/* CAPTCHA */
+.g-recaptcha {
   margin-bottom: 1.25rem;
 }
 

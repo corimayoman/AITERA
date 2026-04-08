@@ -151,7 +151,6 @@ const translations = {
     "contact.form.company":    "Company",
     "contact.form.email":      "Work email",
     "contact.form.message":    "How can we help?",
-    "contact.form.captcha":    "[ CAPTCHA — integrate reCAPTCHA or hCaptcha here before deployment ]",
     "contact.form.consent.text":   "I agree that avely.ai may process my data to respond to this inquiry. I have read the ",
     "contact.form.consent.privacy":"Privacy Policy",
     "contact.form.submit":     "Send message",
@@ -335,7 +334,6 @@ const translations = {
     "contact.form.company":    "Empresa",
     "contact.form.email":      "Email profesional",
     "contact.form.message":    "¿Cómo podemos ayudarte?",
-    "contact.form.captcha":    "[ CAPTCHA — integrar reCAPTCHA o hCaptcha aquí antes del despliegue ]",
     "contact.form.consent.text":   "Acepto que avely.ai procese mis datos para responder a esta consulta. He leído la ",
     "contact.form.consent.privacy":"Política de Privacidad",
     "contact.form.submit":     "Enviar mensaje",
@@ -564,12 +562,12 @@ function initScrollReveal() {
   elements.forEach(el => observer.observe(el));
 }
 
-/* ── Contact Form (basic client-side UX) ────────────────────────────────── */
+/* ── Contact Form — sends via Formspree ──────────────────────────────────── */
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const consent = form.querySelector('#contact-consent');
@@ -578,13 +576,34 @@ function initContactForm() {
       return;
     }
 
-    // Placeholder: replace with your actual form submission logic
-    // e.g., fetch('/api/contact', { method: 'POST', body: new FormData(form) })
     const btn = form.querySelector('[type="submit"]');
     if (btn) {
-      btn.textContent = currentLang === 'es' ? 'Enviado ✓' : 'Sent ✓';
       btn.disabled = true;
-      btn.style.background = '#2d6a4f';
+      btn.textContent = currentLang === 'es' ? 'Enviando…' : 'Sending…';
+    }
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        if (btn) {
+          btn.textContent = currentLang === 'es' ? 'Enviado ✓' : 'Sent ✓';
+          btn.style.background = '#2d6a4f';
+        }
+        form.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      if (btn) {
+        btn.textContent = currentLang === 'es' ? 'Error — reintentar' : 'Error — try again';
+        btn.style.background = '#c0392b';
+        btn.disabled = false;
+      }
     }
   });
 }
