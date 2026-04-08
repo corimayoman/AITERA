@@ -1062,7 +1062,7 @@ p { color: var(--muted); font-size: 1.05rem; line-height: 1.75; }
 }
 
 /* CAPTCHA */
-.g-recaptcha {
+.h-captcha {
   margin-bottom: 1.25rem;
 }
 

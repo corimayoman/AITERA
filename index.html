@@ -48,6 +48,9 @@
   <!-- ── reCAPTCHA v2 ──────────────────────────────────────── -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
+  <!-- ── Web3Forms ─────────────────────────────────────────── -->
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+
   <!-- ── JSON-LD Structured Data ───────────────────────────── -->
   <script type="application/ld+json">
   {
@@ -681,7 +684,13 @@
         </div>
 
         <div class="contact-form" role="form" aria-label="Contact form">
-          <form id="contact-form" action="https://formspree.io/f/matias.m.vandertuin@gmail.com" method="POST" novalidate>
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+            <!-- Web3Forms access key — get yours free at https://web3forms.com -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+            <input type="hidden" name="subject" value="New contact from avely.ai" />
+            <input type="hidden" name="from_name" value="avely.ai Contact Form" />
+            <!-- Honeypot spam protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none;" />
             <div class="form-row">
               <div class="form-group">
                 <label for="contact-name" data-i18n="contact.form.name">Full name</label>
@@ -703,8 +712,8 @@
               <textarea id="contact-message" name="message" required placeholder="[Describe your challenge or project]"></textarea>
             </div>
 
-            <!-- reCAPTCHA v2 — replace data-sitekey with your production key from https://www.google.com/recaptcha/admin -->
-            <div class="g-recaptcha" data-sitekey="6LcsPK0sAAAAAGbGIWu65PeRZNZ5UZMEnct9ojxG" data-theme="light"></div>
+            <!-- Web3Forms built-in hCaptcha (free, no key needed) -->
+            <div class="h-captcha" data-captcha="true"></div>
 
             <!-- Explicit consent — no pre-ticked checkbox -->
             <div class="form-consent">

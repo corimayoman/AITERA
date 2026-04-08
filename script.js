@@ -562,7 +562,7 @@ function initScrollReveal() {
   elements.forEach(el => observer.observe(el));
 }
 
-/* ── Contact Form — sends via Formspree ──────────────────────────────────── */
+/* ── Contact Form — sends via Web3Forms ───────────────────────────────────── */
 function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
@@ -586,17 +586,18 @@ function initContactForm() {
       const res = await fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
       });
 
-      if (res.ok) {
+      const data = await res.json();
+
+      if (data.success) {
         if (btn) {
           btn.textContent = currentLang === 'es' ? 'Enviado ✓' : 'Sent ✓';
           btn.style.background = '#2d6a4f';
         }
         form.reset();
       } else {
-        throw new Error('Form submission failed');
+        throw new Error(data.message || 'Form submission failed');
       }
     } catch (err) {
       if (btn) {
