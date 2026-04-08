@@ -582,10 +582,24 @@ function initContactForm() {
       btn.textContent = currentLang === 'es' ? 'Enviando…' : 'Sending…';
     }
 
+    // Set replyto to the user's email
+    const emailInput = form.querySelector('#contact-email');
+    const replytoInput = form.querySelector('[name="replyto"]');
+    if (emailInput && replytoInput) {
+      replytoInput.value = emailInput.value;
+    }
+
     try {
-      const res = await fetch(form.action, {
+      const formData = new FormData(form);
+      const json = JSON.stringify(Object.fromEntries(formData));
+
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: new FormData(form),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json,
       });
 
       const data = await res.json();
@@ -596,6 +610,8 @@ function initContactForm() {
           btn.style.background = '#2d6a4f';
         }
         form.reset();
+        // Reset hCaptcha if present
+        if (window.hcaptcha) window.hcaptcha.reset();
       } else {
         throw new Error(data.message || 'Form submission failed');
       }
