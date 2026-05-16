@@ -94,6 +94,19 @@ const translations = {
     "industries.i7.title":"Enterprise Operations",
     "industries.i7.desc": "Cross-functional AI deployment for large-scale organizational transformation.",
 
+    /* Case Studies */
+    "nav.cases":          "Case Studies",
+    "cases.label":        "Case Studies",
+    "cases.title":        "Work that speaks for itself",
+    "cases.subtitle":     "Real projects. Real results. AI strategy applied from brand to platform.",
+    "cases.c1.sector":    "Education",
+    "cases.c1.desc":      "AI-driven brand strategy and digital positioning to establish Camino a FOL as the definitive reference for FOL exam preparation in Spain — from identity design to a full-stack web platform with intelligent content architecture and automated workflows.",
+    "cases.tag.brand":    "Brand Strategy",
+    "cases.tag.positioning": "AI Positioning",
+    "cases.tag.platform": "Web Platform",
+    "cases.tag.seo":      "SEO",
+    "cases.visit":        "Visit project",
+
     /* Why avely.ai */
     "why.label":    "Why avely.ai",
     "why.title":    "Built differently. Deployed seriously.",
@@ -276,6 +289,19 @@ const translations = {
     "industries.i6.desc": "Generación de propuestas, inteligencia de clientes y optimización de entrega.",
     "industries.i7.title":"Operaciones Empresariales",
     "industries.i7.desc": "Despliegue de IA multifuncional para transformación organizacional a gran escala.",
+
+    /* Case Studies */
+    "nav.cases":          "Casos de Éxito",
+    "cases.label":        "Casos de Éxito",
+    "cases.title":        "Trabajos que hablan por sí solos",
+    "cases.subtitle":     "Proyectos reales. Resultados reales. Estrategia de IA aplicada desde la marca hasta la plataforma.",
+    "cases.c1.sector":    "Educación",
+    "cases.c1.desc":      "Estrategia de marca impulsada por IA y posicionamiento digital para establecer Camino a FOL como referente en la preparación de oposiciones FOL en España — desde el diseño de identidad hasta una plataforma web full-stack con arquitectura de contenido inteligente y flujos automatizados.",
+    "cases.tag.brand":    "Estrategia de Marca",
+    "cases.tag.positioning": "Posicionamiento IA",
+    "cases.tag.platform": "Plataforma Web",
+    "cases.tag.seo":      "SEO",
+    "cases.visit":        "Ver proyecto",
 
     /* Why avely.ai */
     "why.label":    "Por Qué avely.ai",

@@ -777,6 +777,126 @@ p { color: var(--muted); font-size: 1.05rem; line-height: 1.75; }
   line-height: 1.55;
 }
 
+/* ── Case Studies ───────────────────────────────────────────── */
+.cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(560px, 1fr));
+  gap: 2rem;
+  margin-top: var(--space-lg);
+  justify-content: center;
+}
+
+.case-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition);
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.case-card:hover {
+  border-color: var(--bordeaux);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.case-card__image-link {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.case-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.case-card:hover .case-card__img {
+  transform: scale(1.03);
+}
+
+.case-card__body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  flex: 1;
+}
+
+.case-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.case-card__tag {
+  background: rgba(255,10,108,0.08);
+  color: var(--bordeaux);
+  border-radius: 100px;
+  padding: 0.25rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.case-card__title {
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--graphite);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.case-card__desc {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+}
+
+.case-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.case-card__tags span {
+  background: var(--blush-bg);
+  color: var(--graphite);
+  border-radius: var(--radius-sm);
+  padding: 0.2rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.case-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--bordeaux);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  transition: gap var(--transition);
+}
+
+.case-card__link:hover {
+  gap: 0.65rem;
+}
+
 /* ── Why avely.ai ────────────────────────────────────────────── */
 #why-aitera {
   background: var(--white);
@@ -1426,6 +1546,8 @@ p { color: var(--muted); font-size: 1.05rem; line-height: 1.75; }
   .services-grid { grid-template-columns: 1fr; }
   .steps-grid { grid-template-columns: 1fr; }
   .industries-grid { grid-template-columns: 1fr; }
+  .cases-grid { grid-template-columns: 1fr; }
+  .case-card__body { padding: 1.5rem; }
   .security-grid { grid-template-columns: 1fr; }
   .about-stats { grid-template-columns: 1fr 1fr; }
   .footer-top { grid-template-columns: 1fr; }
